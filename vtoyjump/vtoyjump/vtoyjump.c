@@ -2297,12 +2297,14 @@ static BOOL CheckVentoyDisk(DWORD DiskNum)
 
     CloseHandle(Handle);
 
+    // check for Ventoy sig
     if (memcmp(SectorBuf + 0x190, check, 8) == 0)
     {
         return TRUE;
     }
 
-    return FALSE;
+// return true even if not ventoy code in LBA0!
+   return TRUE;
 }
 
 static BOOL VentoyIsLenovoRecovery(CHAR *IsoPath, CHAR *VTLRIPath)
