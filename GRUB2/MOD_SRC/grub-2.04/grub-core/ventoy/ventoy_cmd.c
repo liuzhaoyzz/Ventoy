@@ -2827,7 +2827,7 @@ static grub_err_t ventoy_cmd_list_img(grub_extcmd_context_t ctxt, int argc, char
         return grub_error(GRUB_ERR_BAD_ARGUMENT, "Must clear image before list");
     }
 
-    VTOY_CMD_CHECK(1);
+    VTOY_CMD_CHECK(0);
 
     g_enumerate_time_checked  = 0;
     g_enumerate_start_time_ms = grub_get_time_ms();
@@ -4227,7 +4227,7 @@ static grub_err_t ventoy_cmd_dynamic_menu(grub_extcmd_context_t ctxt, int argc, 
         return 0;
     }
 
-    VTOY_CMD_CHECK(1);
+    VTOY_CMD_CHECK(0);
 
     if (args[0][0] == '0')
     {
